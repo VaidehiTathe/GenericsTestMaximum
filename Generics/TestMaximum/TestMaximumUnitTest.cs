@@ -27,5 +27,29 @@ namespace TestMaximum
             int maximumNumber = testMax.findMaximum(5, 4, 6);
             Assert.AreEqual(6, maximumNumber);
         }
+
+        [Test]
+        public void GivenFloatNumber_WhenAtFirstPosition_ShouldReturnTrue()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            float maximumNumber = testMax.findMaximum(6.0f, 5.1f, 2.1f);
+            Assert.AreEqual(6.0f, maximumNumber);
+        }
+
+        [Test]
+        public void GivenFloatNumber_WhenAtSecondPosition_ShouldReturnTrue()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            float maximumNumber = testMax.findMaximum(5.1f, 6.2f, 4.2f);
+            Assert.AreEqual(6.2f, maximumNumber);
+        }
+
+        [Test]
+        public void GivenFloatNumber_WhenAtThirdPosition_ShouldReturnTrue()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            float maximumNumber = testMax.findMaximum(5.1f, 4.2f, 6.1f);
+            Assert.AreEqual(6.1f, maximumNumber);
+        }
     }
 }
