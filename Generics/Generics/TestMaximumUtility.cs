@@ -21,5 +21,21 @@ namespace Generics
                 return thirdNumber;
             }
         }
+
+        public float findMaximum(float firstNumber, float secondNumber, float thirdNumber)
+        {
+            if (firstNumber > secondNumber && firstNumber > thirdNumber)
+            {
+                return firstNumber;
+            }
+            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
+            {
+                return secondNumber;
+            }
+            else
+            {
+                return thirdNumber;
+            }
+        }
     }
 }
