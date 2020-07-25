@@ -6,9 +6,18 @@ using System.Text;
 
 namespace Generics
 {
-    public class TestMaximumUtility
+    public class TestMaximumUtility<E> where E:IComparable
     {
-        public E findMaximum<E>(E firstNumber, E secondNumber, E thirdNumber) where E : IComparable<E> 
+        E firstNumber;
+        E secondNumber;
+        E thirdNumber;
+        public TestMaximumUtility(E firstNumber, E secondNumber, E thirdNumber)
+        {
+            this.firstNumber = firstNumber;
+            this.secondNumber = secondNumber;
+            this.thirdNumber = thirdNumber;
+        }
+        public E findMaximum()  
         {
             E max = firstNumber;
             if (secondNumber.CompareTo(max) > 0)
