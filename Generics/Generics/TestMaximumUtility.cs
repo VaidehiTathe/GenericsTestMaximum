@@ -8,9 +8,9 @@ namespace Generics
 {
     public class TestMaximumUtility
     {
-        public int findMaximum(int firstNumber,int secondNumber ,int thirdNumber)
+        public E findMaximum<E>(E firstNumber, E secondNumber, E thirdNumber) where E : IComparable<E> 
         {
-            int max = firstNumber;
+            E max = firstNumber;
             if (secondNumber.CompareTo(max) > 0)
             {
                 max = secondNumber;
@@ -21,35 +21,5 @@ namespace Generics
             }
             return max;
         }
-
-        public float findMaximum(float firstNumber, float secondNumber, float thirdNumber)
-        {
-            float max = firstNumber;
-            if (secondNumber.CompareTo(max) > 0)
-            {
-                max = secondNumber;
-            }
-            if (thirdNumber.CompareTo(max) > 0)
-            {
-                max = thirdNumber;
-            }
-            return max;
-        }
-
-        public  string findMaximum(string firstString, string secondString, string thirdString)
-        {
-            string max = firstString;
-            if (secondString.CompareTo(max)>0)
-            {
-                max = secondString;
-            }
-            if (thirdString.CompareTo(max)>0)
-            {
-                max = thirdString;
-            }
-                return max;
-        }
-
-
     }
 }
