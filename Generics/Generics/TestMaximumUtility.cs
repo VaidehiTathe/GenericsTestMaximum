@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Generics
@@ -8,34 +10,46 @@ namespace Generics
     {
         public int findMaximum(int firstNumber,int secondNumber ,int thirdNumber)
         {
-            if(firstNumber > secondNumber && firstNumber > thirdNumber)
+            int max = firstNumber;
+            if (secondNumber.CompareTo(max) > 0)
             {
-                return firstNumber;
+                max = secondNumber;
             }
-            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
+            if (thirdNumber.CompareTo(max) > 0)
             {
-                return secondNumber;
+                max = thirdNumber;
             }
-            else
-            {
-                return thirdNumber;
-            }
+            return max;
         }
 
         public float findMaximum(float firstNumber, float secondNumber, float thirdNumber)
         {
-            if (firstNumber > secondNumber && firstNumber > thirdNumber)
+            float max = firstNumber;
+            if (secondNumber.CompareTo(max) > 0)
             {
-                return firstNumber;
+                max = secondNumber;
             }
-            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
+            if (thirdNumber.CompareTo(max) > 0)
             {
-                return secondNumber;
+                max = thirdNumber;
             }
-            else
-            {
-                return thirdNumber;
-            }
+            return max;
         }
+
+        public  string findMaximum(string firstString, string secondString, string thirdString)
+        {
+            string max = firstString;
+            if (secondString.CompareTo(max)>0)
+            {
+                max = secondString;
+            }
+            if (thirdString.CompareTo(max)>0)
+            {
+                max = thirdString;
+            }
+                return max;
+        }
+
+
     }
 }
