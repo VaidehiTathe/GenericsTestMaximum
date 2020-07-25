@@ -51,5 +51,29 @@ namespace TestMaximum
             float maximumNumber = testMax.findMaximum(5.1f, 4.2f, 6.1f);
             Assert.AreEqual(6.1f, maximumNumber);
         }
+
+        [Test]
+        public void GivenString_WhenAtFirstPosition_ShouldReturnSameString()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            string maximumString = testMax.findMaximum("Pineapple","Banana", "Apple");
+            Assert.AreEqual("Pineapple", maximumString);
+        }
+
+        [Test]
+        public void GivenString_WhenAtSecondPosition_ShouldReturnSameString()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            string maximumString = testMax.findMaximum("Banana", "Pineapple", "Apple");
+            Assert.AreEqual("Pineapple", maximumString);
+        }
+
+        [Test]
+        public void GivenString_WhenAtThirdPosition_ShouldReturnSameString()
+        {
+            Generics.TestMaximumUtility testMax = new Generics.TestMaximumUtility();
+            string maximumString = testMax.findMaximum("Apple", "Banana", "Pineapple");
+            Assert.AreEqual("Pineapple", maximumString);
+        }
     }
 }
