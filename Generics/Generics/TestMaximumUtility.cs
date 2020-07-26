@@ -37,9 +37,19 @@ namespace Generics
             foreach (E value in myList)
             {
                 this.maximumElement = value;
+                
             }
 
+            printMax(this.maximumElement);
             return this.maximumElement;
+
+            
         }
+
+        public void printMax (E maximumElement)
+        {
+            Console.WriteLine(maximumElement);
+        }
+
     }
 }
