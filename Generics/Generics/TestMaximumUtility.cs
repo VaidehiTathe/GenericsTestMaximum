@@ -1,34 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Generics
 {
-    public class TestMaximumUtility<E> where E:IComparable
+    public class TestMaximumUtility<E> where E : IComparable
     {
         E firstNumber;
         E secondNumber;
         E thirdNumber;
-        public TestMaximumUtility(E firstNumber, E secondNumber, E thirdNumber)
+        E[] values;
+        E maximumElement;
+
+        public TestMaximumUtility()
+        {
+        }
+        public TestMaximumUtility(E firstNumber, E secondNumber, E thirdNumber, [Optional] E[] values)
         {
             this.firstNumber = firstNumber;
             this.secondNumber = secondNumber;
             this.thirdNumber = thirdNumber;
+            this.values = values;
         }
-        public E findMaximum()  
+        public E findMaximum(E firstNumber, E secondNumber, E thirdNumber, params object[] values)  
         {
-            E max = firstNumber;
-            if (secondNumber.CompareTo(max) > 0)
+            List<object> myList = new List<object>();
+            myList.Add(firstNumber);
+            myList.Add(secondNumber);
+            myList.Add(thirdNumber);
+            List<object> list = values.ToList();
+
+            myList.Sort();
+            foreach (E value in myList)
             {
-                max = secondNumber;
+                this.maximumElement = value;
             }
-            if (thirdNumber.CompareTo(max) > 0)
-            {
-                max = thirdNumber;
-            }
-            return max;
+
+            return this.maximumElement;
         }
     }
 }
